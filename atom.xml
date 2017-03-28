@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>heneryyang的博客</title>
+  <subtitle>子标题</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://heneryyang.github.io/"/>
+  <updated>2017-03-28T03:34:08.730Z</updated>
+  <id>http://heneryyang.github.io/</id>
+  
+  <author>
+    <name>Henery Yang</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我的Github博客开张了</title>
+    <link href="http://heneryyang.github.io/2017/03/27/first/"/>
+    <id>http://heneryyang.github.io/2017/03/27/first/</id>
+    <published>2017-03-27T10:04:58.000Z</published>
+    <updated>2017-03-28T03:34:08.730Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;hexo安装配置&quot;&gt;&lt;a href=&quot;#hexo安装配置&quot; class=&quot;headerlink&quot; title=&quot;hexo安装配置&quot;&gt;&lt;/a&gt;hexo安装配置&lt;/h1&gt;&lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; titl
+    
+    </summary>
+    
+      <category term="环境搭建" scheme="http://heneryyang.github.io/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+    
+    
+      <category term="github" scheme="http://heneryyang.github.io/tags/github/"/>
+    
+      <category term="hexo" scheme="http://heneryyang.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://heneryyang.github.io/2017/03/27/hello-world/"/>
+    <id>http://heneryyang.github.io/2017/03/27/hello-world/</id>
+    <published>2017-03-27T09:30:28.000Z</published>
+    <updated>2017-03-27T09:30:28.920Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
