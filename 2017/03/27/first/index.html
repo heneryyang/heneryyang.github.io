@@ -111,8 +111,8 @@ blog为博客目录名
 运行本地服务123cd blognpm installhexo server
 访问 http://localhost:4000/
 安装hexo git插件1cnpm install hexo-deploye">
-<meta property="og:image" content="http://heneryyang.github.io/first/avatar.jpg">
-<meta property="og:updated_time" content="2017-03-28T09:12:08.290Z">
+<meta property="og:image" content="http://heneryyang.github.io/2017/03/27/first/avatar.jpg">
+<meta property="og:updated_time" content="2017-03-28T09:38:37.360Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的Github博客开张了">
 <meta name="twitter:description" content="hexo安装配置安装1cnpm install hexo-cli -g
@@ -124,7 +124,7 @@ blog为博客目录名
 运行本地服务123cd blognpm installhexo server
 访问 http://localhost:4000/
 安装hexo git插件1cnpm install hexo-deploye">
-<meta name="twitter:image" content="http://heneryyang.github.io/first/avatar.jpg">
+<meta name="twitter:image" content="http://heneryyang.github.io/2017/03/27/first/avatar.jpg">
 
 
 
@@ -398,7 +398,12 @@ blog为博客目录名
 <p>文章正文采用<code>markdown</code>格式书写</p>
 <h2 id="分类categories"><a href="#分类categories" class="headerlink" title="分类categories"></a>分类categories</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">categories: 分类</div><div class="line"></div><div class="line">categories:</div><div class="line">  - 一级分类</div><div class="line">    - 二级分类</div></pre></td></tr></table></figure>
 <h2 id="标签tags"><a href="#标签tags" class="headerlink" title="标签tags"></a>标签tags</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">tags: [标签1,标签2]</div><div class="line">tags: </div><div class="line">  - 标签1</div><div class="line">  - 标签2</div></pre></td></tr></table></figure>
-<p><img src="first/avatar.jpg" alt="图片测试"></p>
+<h2 id="本地图片"><a href="#本地图片" class="headerlink" title="本地图片"></a>本地图片</h2><p>将网站配置文件<code>_config.yml</code>中<code>post_asset_folder</code>的值改为<code>true</code>，当用<code>hexo new title</code>命令创建新的文章时，会创建同名目录，可以将资源文件（图片文件）放到该目录下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">post_asset_folder:true</div></pre></td></tr></table></figure>
+<p>安装<code>hexo-asset-image</code>插件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cnpm install https://github.com/CodeFalling/hexo-asset-image --save</div></pre></td></tr></table></figure>
+<p>在md文档中用<code>![图片说明](title/avatar.jpg)</code>方式插入图片<br><img src="/2017/03/27/first/avatar.jpg" alt="图片测试"></p>
+<p>如果不安装<code>hexo-asset-image</code>插件，可使用如下代码（非markdown方式）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% asset_img slug [title] %&#125;</div></pre></td></tr></table></figure></p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
 <li><a href="https://hexo.io/" target="_blank" rel="external">hexo官网</a></li>
 <li><a href="http://blog.csdn.net/jzooo/article/details/46781805" target="_blank" rel="external">零基础免费搭建个人博客-hexo+github</a></li>
@@ -460,6 +465,10 @@ blog为博客目录名
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/28/hello-vue/" rel="prev" title="hello-vue">
+                hello-vue <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -531,7 +540,7 @@ blog为博客目录名
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -595,7 +604,7 @@ blog为博客目录名
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo安装配置"><span class="nav-number">1.</span> <span class="nav-text">hexo安装配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化"><span class="nav-number">1.2.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生产静态页面"><span class="nav-number">1.3.</span> <span class="nav-text">生产静态页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行本地服务"><span class="nav-number">1.4.</span> <span class="nav-text">运行本地服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装hexo-git插件"><span class="nav-number">1.5.</span> <span class="nav-text">安装hexo git插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装主题"><span class="nav-number">1.6.</span> <span class="nav-text">安装主题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NexT"><span class="nav-number">1.6.1.</span> <span class="nav-text">NexT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#maupassant"><span class="nav-number">1.6.2.</span> <span class="nav-text">maupassant</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#about页"><span class="nav-number">1.7.</span> <span class="nav-text">about页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tags页"><span class="nav-number">1.8.</span> <span class="nav-text">tags页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#categories页"><span class="nav-number">1.9.</span> <span class="nav-text">categories页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rss订阅"><span class="nav-number">1.10.</span> <span class="nav-text">rss订阅</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#md文件写法"><span class="nav-number">2.</span> <span class="nav-text">*.md文件写法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分类categories"><span class="nav-number">2.1.</span> <span class="nav-text">分类categories</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标签tags"><span class="nav-number">2.2.</span> <span class="nav-text">标签tags</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo安装配置"><span class="nav-number">1.</span> <span class="nav-text">hexo安装配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化"><span class="nav-number">1.2.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生产静态页面"><span class="nav-number">1.3.</span> <span class="nav-text">生产静态页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行本地服务"><span class="nav-number">1.4.</span> <span class="nav-text">运行本地服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装hexo-git插件"><span class="nav-number">1.5.</span> <span class="nav-text">安装hexo git插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装主题"><span class="nav-number">1.6.</span> <span class="nav-text">安装主题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NexT"><span class="nav-number">1.6.1.</span> <span class="nav-text">NexT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#maupassant"><span class="nav-number">1.6.2.</span> <span class="nav-text">maupassant</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#about页"><span class="nav-number">1.7.</span> <span class="nav-text">about页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tags页"><span class="nav-number">1.8.</span> <span class="nav-text">tags页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#categories页"><span class="nav-number">1.9.</span> <span class="nav-text">categories页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rss订阅"><span class="nav-number">1.10.</span> <span class="nav-text">rss订阅</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#md文件写法"><span class="nav-number">2.</span> <span class="nav-text">*.md文件写法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分类categories"><span class="nav-number">2.1.</span> <span class="nav-text">分类categories</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标签tags"><span class="nav-number">2.2.</span> <span class="nav-text">标签tags</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地图片"><span class="nav-number">2.3.</span> <span class="nav-text">本地图片</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
