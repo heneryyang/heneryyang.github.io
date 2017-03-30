@@ -1,19 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>heneryyang的博客</title>
-  <subtitle>子标题</subtitle>
+  <title>码农杨恒的博客</title>
+  <subtitle>一个老码农的技术博客</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://heneryyang.github.io/"/>
-  <updated>2017-03-28T13:30:30.720Z</updated>
+  <updated>2017-03-29T02:09:31.920Z</updated>
   <id>http://heneryyang.github.io/</id>
   
   <author>
-    <name>Henery Yang</name>
+    <name>杨恒</name>
     
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hello-vue</title>
+    <link href="http://heneryyang.github.io/2017/03/29/hello-vue/"/>
+    <id>http://heneryyang.github.io/2017/03/29/hello-vue/</id>
+    <published>2017-03-29T02:09:31.000Z</published>
+    <updated>2017-03-29T02:09:31.920Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>我的Github博客开张了</title>
