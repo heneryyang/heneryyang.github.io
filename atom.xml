@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://heneryyang.github.io/"/>
-  <updated>2017-03-29T02:09:31.920Z</updated>
+  <updated>2017-03-31T07:38:50.850Z</updated>
   <id>http://heneryyang.github.io/</id>
   
   <author>
@@ -16,16 +16,23 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>hello-vue</title>
+    <title>Vue开发环境搭建</title>
     <link href="http://heneryyang.github.io/2017/03/29/hello-vue/"/>
     <id>http://heneryyang.github.io/2017/03/29/hello-vue/</id>
     <published>2017-03-29T02:09:31.000Z</published>
-    <updated>2017-03-29T02:09:31.920Z</updated>
+    <updated>2017-03-31T07:38:50.850Z</updated>
     
     <summary type="html">
     
+      &lt;h1 id=&quot;安装nodejs-npm&quot;&gt;&lt;a href=&quot;#安装nodejs-npm&quot; class=&quot;headerlink&quot; title=&quot;安装nodejs/npm&quot;&gt;&lt;/a&gt;安装nodejs/npm&lt;/h1&gt;&lt;p&gt;参考网上资料&lt;/p&gt;
+&lt;p&gt;npmjs官网&lt;a href=&quot;
+    
     </summary>
     
+      <category term="环境搭建" scheme="http://heneryyang.github.io/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+    
+    
+      <category term="Vue" scheme="http://heneryyang.github.io/tags/Vue/"/>
     
   </entry>
   
