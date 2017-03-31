@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://heneryyang.github.io/"/>
-  <updated>2017-03-31T07:38:50.850Z</updated>
+  <updated>2017-03-31T14:54:17.050Z</updated>
   <id>http://heneryyang.github.io/</id>
   
   <author>
@@ -20,12 +20,11 @@
     <link href="http://heneryyang.github.io/2017/03/29/hello-vue/"/>
     <id>http://heneryyang.github.io/2017/03/29/hello-vue/</id>
     <published>2017-03-29T02:09:31.000Z</published>
-    <updated>2017-03-31T07:38:50.850Z</updated>
+    <updated>2017-03-31T14:54:17.050Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;安装nodejs-npm&quot;&gt;&lt;a href=&quot;#安装nodejs-npm&quot; class=&quot;headerlink&quot; title=&quot;安装nodejs/npm&quot;&gt;&lt;/a&gt;安装nodejs/npm&lt;/h1&gt;&lt;p&gt;参考网上资料&lt;/p&gt;
-&lt;p&gt;npmjs官网&lt;a href=&quot;
+      &lt;p&gt;&lt;img src=&quot;/2017/03/29/hello-vue/vue.png&quot; alt=&quot;Vue&quot;&gt;&lt;br&gt;记录一下在mac环境下搭建Vue开发环境的一些步骤、问题和资料。&lt;br&gt;&lt;/p&gt;
     
     </summary>
     
@@ -41,11 +40,11 @@
     <link href="http://heneryyang.github.io/2017/03/27/first/"/>
     <id>http://heneryyang.github.io/2017/03/27/first/</id>
     <published>2017-03-27T10:04:58.000Z</published>
-    <updated>2017-03-31T06:10:12.350Z</updated>
+    <updated>2017-03-31T14:45:47.800Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;hexo安装配置&quot;&gt;&lt;a href=&quot;#hexo安装配置&quot; class=&quot;headerlink&quot; title=&quot;hexo安装配置&quot;&gt;&lt;/a&gt;hexo安装配置&lt;/h1&gt;&lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; titl
+      &lt;p&gt;&lt;img src=&quot;/2017/03/27/first/hexo.jpeg&quot; alt=&quot;图片测试&quot;&gt;&lt;br&gt;之前一直用Evernote和Quiver作为本地笔记工具，最早使用Evernote，后来由于Evernote越来越重，目前主要结合Safari的Evernot插件收藏一些文章。现在使用Quiver，内容基本都是markdown格式。近期有想法把一些新的同步放到网上和大家分享，选择了&lt;a href=&quot;https://pages.github.com&quot;&gt;Github Pages&lt;/a&gt;，对于blog框架有连个选择Jeyll和Hexo，对比尝试后选择Github+Hexo作为博客框架。&lt;br&gt;&lt;/p&gt;
     
     </summary>
     
