@@ -77,7 +77,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="码农杨恒的博客" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="老杨博客" type="application/atom+xml" />
 
 
 
@@ -101,7 +101,7 @@ blog为博客目录名
 <meta property="og:type" content="article">
 <meta property="og:title" content="我的Github博客开张了">
 <meta property="og:url" content="http://heneryyang.github.io/2017/03/27/first/index.html">
-<meta property="og:site_name" content="码农杨恒的博客">
+<meta property="og:site_name" content="老杨博客">
 <meta property="og:description" content="hexo安装配置安装1cnpm install hexo-cli -g
 初始化1hexo init blog
 
@@ -112,7 +112,7 @@ blog为博客目录名
 访问 http://localhost:4000/
 安装hexo git插件1cnpm install hexo-deploye">
 <meta property="og:image" content="http://heneryyang.github.io/2017/03/27/first/hexo.jpeg">
-<meta property="og:updated_time" content="2017-03-31T05:01:25.320Z">
+<meta property="og:updated_time" content="2017-03-31T06:00:29.310Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的Github博客开张了">
 <meta name="twitter:description" content="hexo安装配置安装1cnpm install hexo-cli -g
@@ -158,7 +158,7 @@ blog为博客目录名
 
 
 
-  <title> 我的Github博客开张了 | 码农杨恒的博客 </title>
+  <title> 我的Github博客开张了 | 老杨博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -207,7 +207,7 @@ blog为博客目录名
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">码农杨恒的博客</span>
+        <span class="site-title">老杨博客</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -299,7 +299,7 @@ blog为博客目录名
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="码农杨恒的博客">
+      <meta itemprop="name" content="老杨博客">
     </span>
 
     
@@ -430,7 +430,7 @@ blog为博客目录名
 <p>由于NexT第三方服务腾讯MTA的url地址是http的，会导致在一些浏览器上有安全问题，将<code>themes/next/layout/_third-party/analytics/tencent-mta.swig</code>文件中的<code>http</code>改为<code>https</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mta.src = &quot;https://pingjs.qq.com/h5/stats.js?v2.0.2&quot;;</div></pre></td></tr></table></figure></p>
 <h2 id="分享"><a href="#分享" class="headerlink" title="分享"></a>分享</h2><p>采用百度分享，修改<strong>主题配置文件</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># Baidu Share</div><div class="line"># Available value:</div><div class="line">#    button | slide</div><div class="line"># Warning: Baidu Share does not support https.</div><div class="line">baidushare:</div><div class="line">  type: button</div></pre></td></tr></table></figure></p>
 <p>其中<code>button</code>为按钮格式，<code>slide</code>为侧边栏展开方式</p>
-<p>由于百度分享不支持<code>https</code>，在<a href="https://github.com/hrwhisper/baiduShare下载代码，将static目录放置在`source`下，然后修改`themes/next/layout/_partials/share/baidushare.swig`文件中`//bdimg.share.baidu.com/static`改为`/static`" target="_blank" rel="external">https://github.com/hrwhisper/baiduShare下载代码，将static目录放置在`source`下，然后修改`themes/next/layout/_partials/share/baidushare.swig`文件中`//bdimg.share.baidu.com/static`改为`/static`</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">  with(document)0[(getElementsByTagName(&apos;head&apos;)[0]||body).appendChild(createElement(&apos;script&apos;)).src=&apos;/static/api/js/share.js?cdnversion=&apos;+~(-new Date()/36e5)];</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>由于百度分享不支持<code>https</code>，在<a href="https://github.com/hrwhisper/baiduShare" target="_blank" rel="external">https://github.com/hrwhisper/baiduShare</a>下载代码，将static目录放置在<code>source</code>下，然后修改<code>themes/next/layout/_partials/share/baidushare.swig</code>文件中<code>//bdimg.share.baidu.com/static</code>改为<code>/static</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">  with(document)0[(getElementsByTagName(&apos;head&apos;)[0]||body).appendChild(createElement(&apos;script&apos;)).src=&apos;/static/api/js/share.js?cdnversion=&apos;+~(-new Date()/36e5)];</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
 <h2 id="sitemap"><a href="#sitemap" class="headerlink" title="sitemap"></a>sitemap</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cnpm install hexo-generator-sitemap --save</div><div class="line">cnpm install hexo-generator-baidu-sitemap --save</div></pre></td></tr></table></figure>
 <p>在网站配置文件中加入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sitemap:</div><div class="line">  path: sitemap.xml</div><div class="line">baidusitemap:</div><div class="line">  path: baidusitemap.xml</div></pre></td></tr></table></figure></p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
