@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://heneryyang.github.io/"/>
-  <updated>2017-04-01T03:56:26.780Z</updated>
+  <updated>2017-04-06T16:47:54.620Z</updated>
   <id>http://heneryyang.github.io/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Flexbox布局总结</title>
+    <link href="http://heneryyang.github.io/2017/04/07/css-flex/"/>
+    <id>http://heneryyang.github.io/2017/04/07/css-flex/</id>
+    <published>2017-04-06T16:47:54.000Z</published>
+    <updated>2017-04-06T16:47:54.620Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/2017/04/07/css-flex/banner.jpg&quot; alt=&quot;Flexbox布局总结&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端 - css" scheme="http://heneryyang.github.io/categories/%E5%89%8D%E7%AB%AF-css/"/>
+    
+    
+      <category term="css" scheme="http://heneryyang.github.io/tags/css/"/>
+    
+      <category term="flex" scheme="http://heneryyang.github.io/tags/flex/"/>
+    
+      <category term="flexbox" scheme="http://heneryyang.github.io/tags/flexbox/"/>
+    
+      <category term="box" scheme="http://heneryyang.github.io/tags/box/"/>
+    
+      <category term="css3" scheme="http://heneryyang.github.io/tags/css3/"/>
+    
+      <category term="布局" scheme="http://heneryyang.github.io/tags/%E5%B8%83%E5%B1%80/"/>
+    
+  </entry>
   
   <entry>
     <title>2017年书单</title>
