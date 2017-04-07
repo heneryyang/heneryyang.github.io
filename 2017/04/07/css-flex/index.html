@@ -73,7 +73,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="css,flex,flexbox,box,css3,布局," />
+  <meta name="keywords" content="css,css3,flex,flexbox,box,布局," />
 
 
 
@@ -453,10 +453,10 @@
 </tr>
 </tbody>
 </table>
-<p>运行结果<br><iframe scrolling="no" width="620" height="360" src="http://jsfiddle.net/heneryyang/76e9gL1h/embedded/result,css,html/light" frameborder="0" allowfullscreen></iframe></p>
+<p>运行结果<br><iframe scrolling="no" width="620" height="360" src="https://jsfiddle.net/heneryyang/76e9gL1h/embedded/result,css,html/light" frameborder="0" allowfullscreen></iframe></p>
 <h2 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h2><p>默认情况下，项目都排在一条线（又称”轴线”）上。flex-wrap属性定义，如果一条轴线排不下，如何换行，默认值<code>nowrap</code>。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-container</span> &#123;</div><div class="line">  <span class="attribute">-webkit-flex-wrap</span>: nowrap | wrap | wrap-reverse; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">flex-wrap</span>:         nowrap | wrap | wrap-reverse;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<iframe scrolling="no" width="620" height="410" src="http://jsfiddle.net/heneryyang/814f7q3n/embedded/result,css,html/light" frameborder="0" allowfullscreen></iframe>
+<iframe scrolling="no" width="620" height="410" src="https://jsfiddle.net/heneryyang/814f7q3n/embedded/result,css,html/light" frameborder="0" allowfullscreen></iframe>
 <blockquote>
 <p><strong>注意:</strong> 在Android4.4一下版本及较老版本的浏览器对于该属性不支持。</p>
 </blockquote>
@@ -494,7 +494,7 @@
 </tr>
 </tbody>
 </table>
-<iframe scrolling="no" width="620" height="520" src="http://jsfiddle.net/heneryyang/9g8ydxn3/embedded/result,css,html/light" frameborder="0" allowfullscreen></iframe>
+<iframe scrolling="no" width="620" height="520" src="https://jsfiddle.net/heneryyang/9g8ydxn3/embedded/result,css,html/light" frameborder="0" allowfullscreen></iframe>
 <h2 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-container</span> &#123;</div><div class="line">  <span class="attribute">-webkit-align-items</span>: flex-start | flex-end | center | baseline | stretch; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">align-items</span>:         flex-start | flex-end | center | baseline | stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <table>
 <thead>
@@ -526,33 +526,33 @@
 </tr>
 </tbody>
 </table>
-<iframe scrolling="no" width="620" height="400" src="http://jsfiddle.net/heneryyang/uwmLsh4j/embedded/result,css,html/light" frameborder="0" allowfullscreen></iframe>
+<iframe scrolling="no" width="620" height="400" src="https://jsfiddle.net/heneryyang/uwmLsh4j/embedded/result,css,html/light" frameborder="0" allowfullscreen></iframe>
 <h2 id="align-content"><a href="#align-content" class="headerlink" title="align-content"></a>align-content</h2><p><code>align-content</code>属性将flex容器内的行在flex容器中侧轴排列方式，类似于<code>justify-content</code>在主轴方向的单个Flex项目对齐方式。<br>Flex项目在flex容器中多行显示行，其多行在flex容器的侧轴方向对齐方式。<br><strong>注意:</strong> 单轴线的情况下该属性不起作用</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-container</span> &#123;</div><div class="line">  <span class="attribute">-webkit-align-content</span>: flex-start | flex-end | center | space-between | space-around | stretch; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">align-content</span>:         flex-start | flex-end | center | space-between | space-around | stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<iframe scrolling="no" width="620" height="440" src="http://jsfiddle.net/heneryyang/jyyde7oj/embedded/result,css,html/light" frameborder="0" allowfullscreen></iframe>
+<iframe scrolling="no" width="620" height="440" src="https://jsfiddle.net/heneryyang/jyyde7oj/embedded/result,css,html/light" frameborder="0" allowfullscreen></iframe>
 <h1 id="项目属性"><a href="#项目属性" class="headerlink" title="项目属性"></a>项目属性</h1><h2 id="order"><a href="#order" class="headerlink" title="order"></a>order</h2><p><code>order</code>定义项目的排列顺序，数值越小，越靠前，默认值为<code>0</code>。<br><strong>注意:</strong> 值可以为负数</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-item</span> &#123;</div><div class="line">  <span class="attribute">-webkit-order</span>: &lt;integer&gt;; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">order</span>:         &lt;integer&gt;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<iframe scrolling="no" width="100%" height="300" src="http://jsfiddle.net/heneryyang/6b4mfw6s/embedded/result,css,html/light" frameborder="0" allowfullscreen></iframe>
+<iframe scrolling="no" width="100%" height="300" src="https://jsfiddle.net/heneryyang/6b4mfw6s/embedded/result,css,html/light" frameborder="0" allowfullscreen></iframe>
 <h2 id="flex-grow"><a href="#flex-grow" class="headerlink" title="flex-grow"></a>flex-grow</h2><p><code>flex-grow</code>属性定义项目的放大比例，默认为<code>0</code>，即如果存在剩余空间，也不放大。<br><strong>注意:</strong> 负数是非法的</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-item</span> &#123;</div><div class="line">  <span class="attribute">-webkit-flex-grow</span>: &lt;number&gt;; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">flex-grow</span>:         &lt;number&gt;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<iframe scrolling="no" width="100%" height="300" src="http://jsfiddle.net/heneryyang/wqefsn3y/embedded/result,css,html/light" frameborder="0" allowfullscreen></iframe>
+<iframe scrolling="no" width="100%" height="300" src="https://jsfiddle.net/heneryyang/wqefsn3y/embedded/result,css,html/light" frameborder="0" allowfullscreen></iframe>
 <blockquote>
 <p>如果所有项目的<code>flex-grow</code>值相同，则他们等分剩余的空间。<br>如果项目的<code>flex-grow</code>不同，则按比例分剩余的空间，比如一个项目的<code>flex-grow</code>的值为<code>2</code>，其他的为<code>1</code>，则前者分得的空间是其他项目的<strong>2倍</strong>。<br><strong>注意:</strong> 这个值是指剩余空间的分配比例，如果没有剩余空间的情况下，该属性没有效果。</p>
 </blockquote>
 <h2 id="flex-shrink"><a href="#flex-shrink" class="headerlink" title="flex-shrink"></a>flex-shrink</h2><p><code>flex-shrink</code>属性定义了项目的缩小比例，默认为<code>1</code>，即如果空间不足，该项目将缩小。<br><strong>注意:</strong> 负数是非法的</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">flex-item</span> &#123;</div><div class="line">  <span class="attribute">-webkit-flex-shrink</span>: &lt;number&gt;; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">flex-shrink</span>:         &lt;number&gt;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<iframe scrolling="no" width="100%" height="300" src="http://jsfiddle.net/heneryyang/ygxr9p0h/embedded/result,css,html/light" frameborder="0" allowfullscreen></iframe>
+<iframe scrolling="no" width="100%" height="300" src="https://jsfiddle.net/heneryyang/ygxr9p0h/embedded/result,css,html/light" frameborder="0" allowfullscreen></iframe>
 <blockquote>
 <p>当<code>flex-shrink</code>为<code>0</code>时，保持项目的原有尺寸不变。</p>
 </blockquote>
 <h2 id="flex-basis"><a href="#flex-basis" class="headerlink" title="flex-basis"></a>flex-basis</h2><p><code>flex-basis</code>属性和<code>width</code>和<code>height</code>属性相同，用来指定flex项目的大小，默认值<code>auto</code>。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-item</span> &#123;</div><div class="line">  <span class="attribute">-webkit-flex-basis</span>: auto | &lt;width&gt;; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">flex-basis</span>:         auto | &lt;width&gt;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<iframe scrolling="no" width="100%" height="300" src="http://jsfiddle.net/heneryyang/te1g9mym/embedded/result,css,html/light" frameborder="0" allowfullscreen></iframe>
+<iframe scrolling="no" width="100%" height="300" src="https://jsfiddle.net/heneryyang/te1g9mym/embedded/result,css,html/light" frameborder="0" allowfullscreen></iframe>
 <h2 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h2><p><code>flex</code>是一个复合属性，包括<code>flex-grow</code>、<code>flex-shrink</code>和<code>flex-basis</code>，默认值为<code>0 1 auto</code></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-item</span> &#123;</div><div class="line">  <span class="attribute">-webkit-flex</span>: none | auto | [ &lt;flex-grow&gt; &lt;flex-shrink&gt;? || &lt;flex-basis&gt; ]; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">flex</span>:         none | auto | [ &lt;flex-grow&gt; &lt;flex-shrink&gt;? || &lt;flex-basis&gt; ];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h2><p><code>align-self</code>可以项目在单独设置交叉轴的对齐属性。默认值为<code>auto</code>，表示与父元素的<code>align-items</code>的值一直，如果父元素没有设置<code>align-items</code>，则等于<code>stretch</code>。<br>其他值的含义和容器的<code>align-items</code>一致。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-item</span> &#123;</div><div class="line">  <span class="attribute">-webkit-align-self</span>: auto | flex-start | flex-end | center | baseline | stretch; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">align-self</span>:         auto | flex-start | flex-end | center | baseline | stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<iframe scrolling="no" width="100%" height="300" src="http://jsfiddle.net/heneryyang/hLt7kc03/embedded/result,css,html/light" frameborder="0" allowfullscreen></iframe>
+<iframe scrolling="no" width="100%" height="300" src="https://jsfiddle.net/heneryyang/hLt7kc03/embedded/result,css,html/light" frameborder="0" allowfullscreen></iframe>
 <h1 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h1><p>Flexbox布局有三个版本：</p>
 <ul>
 <li>old : 最老版本(2009)，<code>display: box</code></li>
@@ -653,13 +653,13 @@
           
             <a href="/tags/css/" rel="tag"># css</a>
           
+            <a href="/tags/css3/" rel="tag"># css3</a>
+          
             <a href="/tags/flex/" rel="tag"># flex</a>
           
             <a href="/tags/flexbox/" rel="tag"># flexbox</a>
           
             <a href="/tags/box/" rel="tag"># box</a>
-          
-            <a href="/tags/css3/" rel="tag"># css3</a>
           
             <a href="/tags/布局/" rel="tag"># 布局</a>
           
