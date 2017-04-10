@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://heneryyang.github.io/2017/04/01/book-list-2017/</loc>
+    
+    <lastmod>2017-04-10T08:29:12.570Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://heneryyang.github.io/2017/04/07/css-flex/</loc>
     
     <lastmod>2017-04-07T02:34:43.620Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://heneryyang.github.io/about/index.html</loc>
     
     <lastmod>2017-04-01T15:06:49.180Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://heneryyang.github.io/2017/04/01/book-list-2017/</loc>
-    
-    <lastmod>2017-04-01T03:56:26.780Z</lastmod>
     
   </url>
   

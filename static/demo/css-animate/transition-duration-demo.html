@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .flex-container {
+            display: -webkit-box;
+            display: -ms-flexdbox;
+            display: -webkit-flex;
+            display: flex;
+        }
+        
+        .parent {
+            width: 250px;
+            height: 150px;
+            position: relative;
+        }
+        
+        .demo-box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            font-size: 20px;
+            left: 0px;
+            top: 25px;
+            position: absolute;
+            -webkit-transition-property: width height background-color font-size left top -webkit-transform color;
+            -webkit-transition-duration: 1s;
+            -webkit-transition-timing-function: ease-in-out;
+            transition-property: width height background-color font-size left top transform color;
+            transition-duration: 1s;
+            transition-timing-function: ease-in-out;
+        }
+        
+        .demo-box-to {
+            transform: rotate(270deg);
+            -webkit-transform: rotate(270deg);
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            color: yellow;
+            font-size: 18px;
+            left: 150px;
+            top: 50px;
+            position: absolute;
+            -webkit-transition-property: width height background-color font-size left top -webkit-transform transform color;
+            -webkit-transition-timing-function: ease-in-out;
+            transition-property: width height background-color font-size left top transform -webkit-transform color;
+            transition-timing-function: ease-in-out;
+        }
+        
+        .demo-box1 {
+            -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+        }
+        
+        .demo-box1-to {
+            -webkit-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+        }
+        
+        .demo-box2 {
+            -webkit-transition-duration: 1s;
+            transition-duration: 1s;
+        }
+        
+        .demo-box2-to {
+            -webkit-transition-duration: 1s;
+            transition-duration: 1s;
+        }
+        
+        .demo-box3 {
+            -webkit-transition-duration: 2s;
+            transition-duration: 2s;
+        }
+        
+        .demo-box3-to {
+            -webkit-transition-duration: 2s;
+            transition-duration: 2s;
+        }
+        
+        .demo-box4 {
+            -webkit-transition-duration: 4s;
+            transition-duration: 4s;
+        }
+        
+        .demo-box4-to {
+            -webkit-transition-duration: 4s;
+            transition-duration: 4s;
+        }
+
+        .play-animate {
+            width: 100px;
+            border: 0;
+            height: 40px;
+            background-color: #FFB300;
+        }
+    </style>
+    <script>
+        function updateTransition1() {
+            var el1 = document.querySelector("div.demo-box1");
+
+            if (el1) {
+                el1.className = "demo-box-to demo-box1-to";
+            } else {
+                el1 = document.querySelector("div.demo-box1-to");
+                el1.className = "demo-box demo-box1";
+            }
+
+            var el2 = document.querySelector("div.demo-box2");
+
+            if (el2) {
+                el2.className = "demo-box-to demo-box2-to";
+            } else {
+                el2 = document.querySelector("div.demo-box2-to");
+                el2.className = "demo-box demo-box2";
+            }
+
+            var el3 = document.querySelector("div.demo-box3");
+
+            if (el3) {
+                el3.className = "demo-box-to demo-box3-to";
+            } else {
+                el3 = document.querySelector("div.demo-box3-to");
+                el3.className = "demo-box demo-box3";
+            }
+
+            var el4 = document.querySelector("div.demo-box4");
+
+            if (el4) {
+                el4.className = "demo-box-to demo-box4-to";
+            } else {
+                el4 = document.querySelector("div.demo-box4-to");
+                el4.className = "demo-box demo-box4";
+            }
+
+        }
+
+        //window.setInterval(updateTransition1, 7000);
+    </script>
+</head>
+
+<body>
+    <div class="flex-container">
+        <div class="parent">
+            duration: 0.5s
+            <div class="demo-box demo-box1">Lorem</div>
+        </div>
+        <div class="parent">
+            duration: 1s
+            <div class="demo-box demo-box2">Lorem</div>
+        </div>
+    </div>
+    <div class="flex-container">
+        <div class="parent">
+            duration: 2s
+            <div class="demo-box demo-box3">Lorem</div>
+        </div>
+        <div class="parent">
+            duration: 4s
+            <div class="demo-box demo-box4">Lorem</div>
+        </div>
+    </div>
+    <button class="play-animate" onclick="updateTransition1()">播放动画</button>
+</body>
+
+</html>

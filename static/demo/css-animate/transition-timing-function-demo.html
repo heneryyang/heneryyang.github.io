@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .flex-container {
+            display: -webkit-box;
+            display: -ms-flexdbox;
+            display: -webkit-flex;
+            display: flex;
+        }
+        
+        .parent {
+            width: 250px;
+            height: 150px;
+            position: relative;
+        }
+        
+        .demo-box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            font-size: 20px;
+            left: 0px;
+            top: 25px;
+            position: absolute;
+            -webkit-transition-property: width height background-color font-size left top color;
+            -webkit-transition-duration: 2s;
+            -webkit-transition-timing-function: ease;
+            transition-property: width height background-color font-size left top color;
+            transition-duration: 2s;
+            transition-timing-function: ease;
+        }
+        
+        .demo-box-to {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            color: yellow;
+            font-size: 18px;
+            left: 150px;
+            top: 50px;
+            position: absolute;
+            -webkit-transition-property: width height background-color font-size left top color;
+            -webkit-transition-duration: 2s;
+            transition-property: width height background-color font-size left top color;
+            transition-duration: 2s;
+        }
+        
+        .demo-box1 {
+            -webkit-transition-timing-function: ease;
+            transition-timing-function: ease;
+        }
+        
+        .demo-box1-to {
+            -webkit-transition-timing-function: ease;
+            transition-timing-function: ease;
+        }
+        
+        .demo-box2 {
+            -webkit-transition-timing-function: ease-in;
+            transition-timing-function: ease-in;
+        }
+        
+        .demo-box2-to {
+            -webkit-transition-timing-function: ease-in;
+            transition-timing-function: ease-in;
+        }
+        
+        .demo-box3 {
+            -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+        }
+        
+        .demo-box3-to {
+            -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+        }
+        
+        .demo-box4 {
+            -webkit-transition-timing-function: ease-in-out;
+            transition-timing-function: ease-in-out;
+        }
+        
+        .demo-box4-to {
+            -webkit-transition-timing-function: ease-in-out;
+            transition-timing-function: ease-in-out;
+        }
+        
+        .demo-box5 {
+            -webkit-transition-timing-function: linear;
+            transition-timing-function: linear;
+        }
+        
+        .demo-box5-to {
+            -webkit-transition-timing-function: linear;
+            transition-timing-function: linear;
+        }
+        
+        .demo-box6 {
+            -webkit-transition-timing-function: step-start;
+            transition-timing-function: step-start;
+        }
+        
+        .demo-box6-to {
+            -webkit-transition-timing-function: step-start;
+            transition-timing-function: step-start;
+        }
+        
+        .demo-box7 {
+            -webkit-transition-timing-function: step-end;
+            transition-timing-function: step-end;
+        }
+        
+        .demo-box7-to {
+            -webkit-transition-timing-function: step-end;
+            transition-timing-function: step-end;
+        }
+        
+        .demo-box8 {
+            -webkit-transition-timing-function: steps(4, end);
+            transition-timing-function: steps(4, end);
+        }
+        
+        .demo-box8-to {
+            -webkit-transition-timing-function: steps(4, end);
+            transition-timing-function: steps(4, end);
+        }
+
+        .play-animate {
+            width: 100px;
+            border: 0;
+            height: 40px;
+            background-color: #FFB300;
+        }
+    </style>
+    <script>
+        function updateTransition1() {
+            var el1 = document.querySelector("div.demo-box1");
+
+            if (el1) {
+                el1.className = "demo-box-to demo-box1-to";
+            } else {
+                el1 = document.querySelector("div.demo-box1-to");
+                el1.className = "demo-box demo-box1";
+            }
+
+            var el2 = document.querySelector("div.demo-box2");
+
+            if (el2) {
+                el2.className = "demo-box-to demo-box2-to";
+            } else {
+                el2 = document.querySelector("div.demo-box2-to");
+                el2.className = "demo-box demo-box2";
+            }
+
+            var el3 = document.querySelector("div.demo-box3");
+
+            if (el3) {
+                el3.className = "demo-box-to demo-box3-to";
+            } else {
+                el3 = document.querySelector("div.demo-box3-to");
+                el3.className = "demo-box demo-box3";
+            }
+
+            var el4 = document.querySelector("div.demo-box4");
+
+            if (el4) {
+                el4.className = "demo-box-to demo-box4-to";
+            } else {
+                el4 = document.querySelector("div.demo-box4-to");
+                el4.className = "demo-box demo-box4";
+            }
+
+            var el5 = document.querySelector("div.demo-box5");
+
+            if (el5) {
+                el5.className = "demo-box-to demo-box5-to";
+            } else {
+                el5 = document.querySelector("div.demo-box5-to");
+                el5.className = "demo-box demo-box5";
+            }
+
+            var el6 = document.querySelector("div.demo-box6");
+
+            if (el6) {
+                el6.className = "demo-box-to demo-box6-to";
+            } else {
+                el6 = document.querySelector("div.demo-box6-to");
+                el6.className = "demo-box demo-box6";
+            }
+
+            var el7 = document.querySelector("div.demo-box7");
+
+            if (el7) {
+                el7.className = "demo-box-to demo-box7-to";
+            } else {
+                el7 = document.querySelector("div.demo-box7-to");
+                el7.className = "demo-box demo-box7";
+            }
+
+            var el7 = document.querySelector("div.demo-box8");
+
+            if (el7) {
+                el7.className = "demo-box-to demo-box8-to";
+            } else {
+                el7 = document.querySelector("div.demo-box8-to");
+                el7.className = "demo-box demo-box8";
+            }
+
+        }
+
+        // window.setInterval(updateTransition1, 7000);
+    </script>
+</head>
+
+<body>
+    <div class="flex-container">
+        <div class="parent">
+            ease
+            <div class="demo-box demo-box1">Lorem</div>
+        </div>
+        <div class="parent">
+            ease-in
+            <div class="demo-box demo-box2">Lorem</div>
+        </div>
+    </div>
+    <div class="flex-container">
+        <div class="parent">
+            ease-out
+            <div class="demo-box demo-box3">Lorem</div>
+        </div>
+        <div class="parent">
+            ease-in-out
+            <div class="demo-box demo-box4">Lorem</div>
+        </div>
+    </div>
+    <div class="flex-container">
+        <div class="parent">
+            linear
+            <div class="demo-box demo-box5">Lorem</div>
+        </div>
+        <div class="parent">
+            step-start
+            <div class="demo-box demo-box6">Lorem</div>
+        </div>
+    </div>
+    <div class="flex-container">
+        <div class="parent">
+            step-end
+            <div class="demo-box demo-box7">Lorem</div>
+        </div>
+        <div class="parent">
+            steps(4, end)
+            <div class="demo-box demo-box8">Lorem</div>
+        </div>
+    </div>
+    <button class="play-animate" onclick="updateTransition1()">播放动画</button>
+</body>
+
+</html>
