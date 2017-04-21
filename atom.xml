@@ -68,7 +68,7 @@
     <link href="http://heneryyang.github.io/2017/03/29/hello-vue/"/>
     <id>http://heneryyang.github.io/2017/03/29/hello-vue/</id>
     <published>2017-03-29T02:09:31.000Z</published>
-    <updated>2017-04-01T00:25:18.670Z</updated>
+    <updated>2017-04-21T12:02:54.310Z</updated>
     
     <summary type="html">
     
@@ -79,7 +79,13 @@
       <category term="环境搭建" scheme="http://heneryyang.github.io/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     
     
-      <category term="Vue" scheme="http://heneryyang.github.io/tags/Vue/"/>
+      <category term="vue" scheme="http://heneryyang.github.io/tags/vue/"/>
+    
+      <category term="nodejs" scheme="http://heneryyang.github.io/tags/nodejs/"/>
+    
+      <category term="webpack" scheme="http://heneryyang.github.io/tags/webpack/"/>
+    
+      <category term="npm" scheme="http://heneryyang.github.io/tags/npm/"/>
     
   </entry>
   

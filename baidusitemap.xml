@@ -4,6 +4,32 @@
 
     
   <url>
+    <loc>http://heneryyang.github.io/2017/03/29/hello-vue/</loc>
+    <lastmod>2017-04-21T12:02:54.310Z</lastmod>
+    <data>
+        <display>
+        <title>Vue开发环境搭建</title>
+        <pubTime>2017-03-29T02:09:31.000Z</pubTime>
+        
+        <tag>vue</tag>
+         
+        <tag>nodejs</tag>
+         
+        <tag>webpack</tag>
+         
+        <tag>npm</tag>
+         
+         
+           
+             
+              <breadCrumb title="环境搭建" url="http://heneryyang.github.io/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://heneryyang.github.io/2017/04/01/book-list-2017/</loc>
     <lastmod>2017-04-21T05:08:03.600Z</lastmod>
     <data>
@@ -51,26 +77,6 @@
     </url>
 
     
-    
-  <url>
-    <loc>http://heneryyang.github.io/2017/03/29/hello-vue/</loc>
-    <lastmod>2017-04-01T00:25:18.670Z</lastmod>
-    <data>
-        <display>
-        <title>Vue开发环境搭建</title>
-        <pubTime>2017-03-29T02:09:31.000Z</pubTime>
-        
-        <tag>Vue</tag>
-         
-         
-           
-             
-              <breadCrumb title="环境搭建" url="http://heneryyang.github.io/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>http://heneryyang.github.io/2017/03/27/first/</loc>
