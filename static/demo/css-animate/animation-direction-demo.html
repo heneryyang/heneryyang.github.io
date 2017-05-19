@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .flex-container {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+        }
+
+        .parent {
+            width: 250px;
+            height: 150px;
+            position: relative;
+        }
+
+        @keyframes move {
+            from {
+                left: 0px;
+            }
+            to {
+                left: 150px;
+            }
+        }
+
+        @-moz-keyframes move
+        /* Firefox */
+
+        {
+            from {
+                left: 0px;
+            }
+            to {
+                left: 150px;
+            }
+        }
+
+        @-webkit-keyframes move
+        /* Safari and Chrome */
+
+        {
+            from {
+                left: 0px;
+            }
+            to {
+                left: 150px;
+            }
+        }
+
+        @-o-keyframes move
+        /* Opera */
+
+        {
+            from {
+                left: 0px;
+            }
+            to {
+                left: 150px;
+            }
+        }
+
+        .demo-box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            font-size: 20px;
+            position: absolute;
+            left: 0px;
+            top: 25px;
+            animation: move 2s infinite;
+            /* Firefox */
+            -moz-animation: move 2s infinite;
+            /* Safari and Chrome */
+            -webkit-animation: move 2s infinite;
+            /* Opera */
+            -o-animation: move 2s infinite;
+        }
+
+        .demo-box1 {
+            animation-direction: normal;
+            /* Firefox */
+            -moz-animation-direction: normal;
+            /* Safari and Chrome */
+            -webkit-animation-direction: normal;
+            /* Opera */
+            -o-animation-direction: normal;
+        }
+
+        .demo-box2 {
+            animation-direction: reverse;
+            /* Firefox */
+            -moz-animation-direction: reverse;
+            /* Safari and Chrome */
+            -webkit-animation-direction: reverse;
+            /* Opera */
+            -o-animation-direction: reverse;
+        }
+
+        .demo-box3 {
+            animation-direction: alternate;
+            /* Firefox */
+            -moz-animation-direction: alternate;
+            /* Safari and Chrome */
+            -webkit-animation-direction: alternate;
+            /* Opera */
+            -o-animation-direction: alternate;
+        }
+
+        .demo-box4 {
+            animation-direction: alternate-reverse;
+            /* Firefox */
+            -moz-animation-direction: alternate-reverse;
+            /* Safari and Chrome */
+            -webkit-animation-direction: alternate-reverse;
+            /* Opera */
+            -o-animation-direction: alternate-reverse;
+        }
+
+        .running {
+            animation-play-state: running;
+        }
+
+        .paused {
+            animation-play-state: paused;
+        }
+
+        .play-animate {
+            width: 100px;
+            border: 0;
+            height: 40px;
+            background-color: #FFB300;
+        }
+    </style>
+    <script>
+        function toggle() {
+            var el1 = document.querySelector("div.demo-box1.running");
+
+            if (el1) {
+                el1.className = "demo-box demo-box1 paused";
+            } else {
+                el1 = document.querySelector("div.demo-box1.paused");
+                el1.className = "demo-box demo-box1 running";
+            }
+
+            var el2 = document.querySelector("div.demo-box2.running");
+
+            if (el2) {
+                el2.className = "demo-box demo-box2 paused";
+            } else {
+                el2 = document.querySelector("div.demo-box2.paused");
+                el2.className = "demo-box demo-box2 running";
+            }
+
+            var el3 = document.querySelector("div.demo-box3.running");
+
+            if (el3) {
+                el3.className = "demo-box demo-box3 paused";
+            } else {
+                el3 = document.querySelector("div.demo-box3.paused");
+                el3.className = "demo-box demo-box3 running";
+            }
+
+            var el4 = document.querySelector("div.demo-box4.running");
+
+            if (el4) {
+                el4.className = "demo-box demo-box4 paused";
+            } else {
+                el4 = document.querySelector("div.demo-box4.paused");
+                el4.className = "demo-box demo-box4 running";
+            }
+
+        }
+
+        // window.setInterval(updateTransition1, 7000);
+    </script>
+</head>
+
+<body>
+    <div class="flex-container">
+        <div class="parent">
+            normal
+            <div class="demo-box demo-box1 paused">Lorem</div>
+        </div>
+        <div class="parent">
+            reverse
+            <div class="demo-box demo-box2 paused">Lorem</div>
+        </div>
+    </div>
+    <div class="flex-container">
+        <div class="parent">
+            alternate
+            <div class="demo-box demo-box3 paused">Lorem</div>
+        </div>
+        <div class="parent">
+            alternate-reverse
+            <div class="demo-box demo-box4 paused">Lorem</div>
+        </div>
+    </div>
+    <button class="play-animate" onclick="toggle()">播放动画</button>
+</body>
+
+</html>
