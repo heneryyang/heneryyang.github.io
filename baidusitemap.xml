@@ -4,6 +4,93 @@
 
     
   <url>
+    <loc>http://heneryyang.github.io/2017/07/05/docker-jenkins-ci/</loc>
+    <lastmod>2017-07-11T07:41:37.000Z</lastmod>
+    <data>
+        <display>
+        <title>通过jenkins部署环境</title>
+        <pubTime>2017-07-05T03:43:12.000Z</pubTime>
+        
+        <tag>docker</tag>
+         
+        <tag>jenkins</tag>
+         
+        <tag>ci</tag>
+         
+         
+           
+             
+              <breadCrumb title="环境搭建" url="http://heneryyang.github.io/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+          
+             
+              <breadCrumb title="持续集成" url="http://heneryyang.github.io/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://heneryyang.github.io/2017/05/24/docker-centos-php-nginx/</loc>
+    <lastmod>2017-06-28T02:52:28.000Z</lastmod>
+    <data>
+        <display>
+        <title>CentOS下用docker生产环境</title>
+        <pubTime>2017-05-24T03:34:36.000Z</pubTime>
+        
+        <tag>docker</tag>
+         
+        <tag>centos</tag>
+         
+        <tag>nginx</tag>
+         
+        <tag>redis</tag>
+         
+        <tag>thrift</tag>
+         
+        <tag>php</tag>
+         
+        <tag>docker-compose</tag>
+         
+        <tag>docker-regist</tag>
+         
+         
+           
+             
+              <breadCrumb title="环境搭建" url="http://heneryyang.github.io/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://heneryyang.github.io/2017/05/23/hello-openresty/</loc>
+    <lastmod>2017-05-24T07:25:24.930Z</lastmod>
+    <data>
+        <display>
+        <title>OpenResty技术预研</title>
+        <pubTime>2017-05-23T08:17:26.000Z</pubTime>
+        
+        <tag>docker</tag>
+         
+        <tag>nginx</tag>
+         
+        <tag>lua</tag>
+         
+        <tag>openresty</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术预研" url="http://heneryyang.github.io/categories/%E6%8A%80%E6%9C%AF%E9%A2%84%E7%A0%94/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://heneryyang.github.io/2017/05/19/css-animate/</loc>
     <lastmod>2017-05-19T08:07:32.610Z</lastmod>
     <data>

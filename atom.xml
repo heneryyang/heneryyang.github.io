@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://heneryyang.github.io/"/>
-  <updated>2017-05-19T08:07:32.610Z</updated>
+  <updated>2017-07-11T07:41:37.000Z</updated>
   <id>http://heneryyang.github.io/</id>
   
   <author>
@@ -14,6 +14,93 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>通过jenkins部署环境</title>
+    <link href="http://heneryyang.github.io/2017/07/05/docker-jenkins-ci/"/>
+    <id>http://heneryyang.github.io/2017/07/05/docker-jenkins-ci/</id>
+    <published>2017-07-05T03:43:12.000Z</published>
+    <updated>2017-07-11T07:41:37.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/2017/07/05/docker-jenkins-ci/banner.png&quot; alt=&quot;通过jenkins部署环境&quot;&gt;&lt;br&gt;由于公司系统采用微服务架构，服务器个数、服务个数都增加了很多，给环境部署带来了更多的工作量，每次部署从拉取版本、打包、部署、运行等，重复劳动多，且容易出错。现在采用docker+jenkins的方式来协助环境的部署，目前主要是java服务、php服务以及nginx配置的更新。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="环境搭建" scheme="http://heneryyang.github.io/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+    
+      <category term="持续集成" scheme="http://heneryyang.github.io/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/"/>
+    
+    
+      <category term="docker" scheme="http://heneryyang.github.io/tags/docker/"/>
+    
+      <category term="jenkins" scheme="http://heneryyang.github.io/tags/jenkins/"/>
+    
+      <category term="ci" scheme="http://heneryyang.github.io/tags/ci/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS下用docker生产环境</title>
+    <link href="http://heneryyang.github.io/2017/05/24/docker-centos-php-nginx/"/>
+    <id>http://heneryyang.github.io/2017/05/24/docker-centos-php-nginx/</id>
+    <published>2017-05-24T03:34:36.000Z</published>
+    <updated>2017-06-28T02:52:28.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/2017/05/24/docker-centos-php-nginx/banner.jpg&quot; alt=&quot;CentOS下用docker生产环境&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="环境搭建" scheme="http://heneryyang.github.io/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+    
+    
+      <category term="docker" scheme="http://heneryyang.github.io/tags/docker/"/>
+    
+      <category term="centos" scheme="http://heneryyang.github.io/tags/centos/"/>
+    
+      <category term="nginx" scheme="http://heneryyang.github.io/tags/nginx/"/>
+    
+      <category term="redis" scheme="http://heneryyang.github.io/tags/redis/"/>
+    
+      <category term="thrift" scheme="http://heneryyang.github.io/tags/thrift/"/>
+    
+      <category term="php" scheme="http://heneryyang.github.io/tags/php/"/>
+    
+      <category term="docker-compose" scheme="http://heneryyang.github.io/tags/docker-compose/"/>
+    
+      <category term="docker-regist" scheme="http://heneryyang.github.io/tags/docker-regist/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>OpenResty技术预研</title>
+    <link href="http://heneryyang.github.io/2017/05/23/hello-openresty/"/>
+    <id>http://heneryyang.github.io/2017/05/23/hello-openresty/</id>
+    <published>2017-05-23T08:17:26.000Z</published>
+    <updated>2017-05-24T07:25:24.930Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/2017/05/23/hello-openresty/banner.png&quot; alt=&quot;OpenResty技术预研&quot;&gt;&lt;/p&gt;
+&lt;p&gt;近期项目有可能会用到高并发的场景，OpenResty基于Nginx的非阻塞I/O模型，可以很好的实现高性能的Web应用。同时据了解京东、淘宝、百度、去哪儿等许多互联网公司都在使用。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术预研" scheme="http://heneryyang.github.io/categories/%E6%8A%80%E6%9C%AF%E9%A2%84%E7%A0%94/"/>
+    
+    
+      <category term="docker" scheme="http://heneryyang.github.io/tags/docker/"/>
+    
+      <category term="nginx" scheme="http://heneryyang.github.io/tags/nginx/"/>
+    
+      <category term="lua" scheme="http://heneryyang.github.io/tags/lua/"/>
+    
+      <category term="openresty" scheme="http://heneryyang.github.io/tags/openresty/"/>
+    
+  </entry>
   
   <entry>
     <title>CSS动画初探</title>

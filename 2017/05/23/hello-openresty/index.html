@@ -1,0 +1,1095 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="NydsfegOwByCjRHlsALJrDim7rnSUjlmlyYXDyqgDTU" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="docker,nginx,lua,openresty," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="老杨博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="近期项目有可能会用到高并发的场景，OpenResty基于Nginx的非阻塞I/O模型，可以很好的实现高性能的Web应用。同时据了解京东、淘宝、百度、去哪儿等许多互联网公司都在使用。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OpenResty技术预研">
+<meta property="og:url" content="http://heneryyang.github.io/2017/05/23/hello-openresty/index.html">
+<meta property="og:site_name" content="老杨博客">
+<meta property="og:description" content="近期项目有可能会用到高并发的场景，OpenResty基于Nginx的非阻塞I/O模型，可以很好的实现高性能的Web应用。同时据了解京东、淘宝、百度、去哪儿等许多互联网公司都在使用。">
+<meta property="og:image" content="http://heneryyang.github.io/2017/05/23/hello-openresty/banner.png">
+<meta property="og:image" content="http://heneryyang.github.io/2017/05/23/hello-openresty/welcome-to-openresty.png">
+<meta property="og:image" content="http://heneryyang.github.io/2017/05/23/hello-openresty/hello-openresty.png">
+<meta property="og:updated_time" content="2017-05-24T07:25:24.930Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OpenResty技术预研">
+<meta name="twitter:description" content="近期项目有可能会用到高并发的场景，OpenResty基于Nginx的非阻塞I/O模型，可以很好的实现高性能的Web应用。同时据了解京东、淘宝、百度、去哪儿等许多互联网公司都在使用。">
+<meta name="twitter:image" content="http://heneryyang.github.io/2017/05/23/hello-openresty/banner.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://heneryyang.github.io/2017/05/23/hello-openresty/"/>
+
+
+
+
+
+  <title> OpenResty技术预研 | 老杨博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=61519133";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+<script>
+  	var _mtac = {};
+  	(function() {
+  		var mta = document.createElement("script");
+  		mta.src = "https://pingjs.qq.com/h5/stats.js?v2.0.2";
+  		mta.setAttribute("name", "MTAH5");
+  		mta.setAttribute("sid", "500426631");
+
+  		var s = document.getElementsByTagName("script")[0];
+  		s.parentNode.insertBefore(mta, s);
+  	})();
+</script>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">老杨博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">一个老码农的技术博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://heneryyang.github.io/2017/05/23/hello-openresty/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="老杨">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="老杨博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                OpenResty技术预研
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-23T16:17:26+08:00">
+                2017-05-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术预研/" itemprop="url" rel="index">
+                    <span itemprop="name">技术预研</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/2017/05/23/hello-openresty/banner.png" alt="OpenResty技术预研"></p>
+<p>近期项目有可能会用到高并发的场景，OpenResty基于Nginx的非阻塞I/O模型，可以很好的实现高性能的Web应用。同时据了解京东、淘宝、百度、去哪儿等许多互联网公司都在使用。</p>
+<a id="more"></a>
+<h1 id="关于OpenResty"><a href="#关于OpenResty" class="headerlink" title="关于OpenResty"></a>关于OpenResty</h1><p>OpenResty® 是一个基于 Nginx 与 Lua 的高性能 Web 平台，其内部集成了大量精良的 Lua 库、第三方模块以及大多数的依赖项。用于方便地搭建能够处理超高并发、扩展性极高的动态 Web 应用、Web 服务和动态网关。</p>
+<p>OpenResty® 通过汇聚各种设计精良的 Nginx 模块（主要由 OpenResty 团队自主开发），从而将 Nginx 有效地变成一个强大的通用 Web 应用平台。这样，Web 开发人员和系统工程师可以使用 Lua 脚本语言调动 Nginx 支持的各种 C 以及 Lua 模块，快速构造出足以胜任 10K 乃至 1000K 以上单机并发连接的高性能 Web 应用系统。</p>
+<p>OpenResty® 的目标是让你的Web服务直接跑在 Nginx 服务内部，充分利用 Nginx 的非阻塞 I/O 模型，不仅仅对 HTTP 客户端请求,甚至于对远程后端诸如 MySQL、PostgreSQL、Memcached 以及 Redis 等都进行一致的高性能响应。</p>
+<h1 id="安装OpenResty开发环境"><a href="#安装OpenResty开发环境" class="headerlink" title="安装OpenResty开发环境"></a>安装OpenResty开发环境</h1><p>linux和mac下的安装步骤具体可以参考OpenResty官方网站中<a href="https://openresty.org/cn/installation.html" target="_blank" rel="external">安装部分</a>内容，在这里只介绍通过<strong>docker</strong>方式搭建OpenResty开发环境。</p>
+<h2 id="docker安装方式"><a href="#docker安装方式" class="headerlink" title="docker安装方式"></a>docker安装方式</h2><h3 id="获取openresty镜像"><a href="#获取openresty镜像" class="headerlink" title="获取openresty镜像"></a>获取openresty镜像</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ docker pull openresty/openresty</div></pre></td></tr></table></figure>
+<p>获取的镜像OpenResty的版本是：<br><code>1.11.2.2</code></p>
+<h3 id="运行docker容器"><a href="#运行docker容器" class="headerlink" title="运行docker容器"></a>运行docker容器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ docker run -d --name=&quot;openresty&quot; -p 8080:80 openresty/openresty</div></pre></td></tr></table></figure>
+<p><code>-p 8080:80</code>将容器的80端口映射到本地的8080端口</p>
+<p>浏览器访问<a href="http://localhost:8080" target="_blank" rel="external">http://localhost:8080</a>，可以看到下面的结果说明OpenResty环境正常了<br><img src="/2017/05/23/hello-openresty/welcome-to-openresty.png" alt="Welcome to OpenResty"></p>
+<h3 id="停止容器"><a href="#停止容器" class="headerlink" title="停止容器"></a>停止容器</h3><p>可以在终端通过如下命令停止容器并删除容器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ docker kill openresty &amp;&amp; docker rm openresty</div></pre></td></tr></table></figure></p>
+<p>也可以用<code>Kitematic</code>进行管理，更加方便直观</p>
+<h2 id="第一个应用-hello-openresty"><a href="#第一个应用-hello-openresty" class="headerlink" title="第一个应用 - hello openresty"></a>第一个应用 - hello openresty</h2><p>环境正常了，按照惯例写一个OpenResty的hello world<br>在本地创建工作目录<code>work</code>，目录结构如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">work</div><div class="line">|____conf</div><div class="line">| |____nginx.conf</div><div class="line">|____logs</div></pre></td></tr></table></figure></p>
+<p>修改work/conf/nginx.conf<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">worker_processes  1;</div><div class="line">error_log logs/error.log;</div><div class="line">events &#123;</div><div class="line">    worker_connections 1024;</div><div class="line">&#125;</div><div class="line">http &#123;</div><div class="line">    server &#123;</div><div class="line">        listen 80;</div><div class="line">        location / &#123;</div><div class="line">            default_type text/html;</div><div class="line">            content_by_lua &apos;</div><div class="line">                ngx.say(&quot;&lt;p&gt;hello, openresty&lt;/p&gt;&quot;)</div><div class="line">            &apos;;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="启动docker容器"><a href="#启动docker容器" class="headerlink" title="启动docker容器"></a>启动docker容器</h3><p>在终端或执行如下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ docker run -d --name=&quot;openresty&quot; -p 8080:80 -v /Users/henery/openresty/work/conf/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf:ro -v /Users/henery/openresty/work/logs:/usr/local/openresty/nginx/logs openresty/openresty</div></pre></td></tr></table></figure></p>
+<p><strong>说明</strong></p>
+<blockquote>
+<p>将本地文件/Users/henery/openresty/work/conf/nginx.conf映射到容器的/usr/local/openresty/nginx/conf/nginx.conf，相当于替换容器原有的nginx配置文件。<br>将本地目录/Users/henery/openresty/work/logs映射到容器的/usr/local/openresty/nginx/logs目录，方便查看日志输入。</p>
+</blockquote>
+<h3 id="查看结果"><a href="#查看结果" class="headerlink" title="查看结果"></a>查看结果</h3><ul>
+<li><p>终端命令访问</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ curl http://localhost:8080</div><div class="line">&lt;p&gt;hello, openresty&lt;/p&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>通过浏览器访问<br><a href="http://localhost:8080" target="_blank" rel="external">http://localhost:8080</a><br><img src="/2017/05/23/hello-openresty/hello-openresty.png" alt="Hello OpenResty"></p>
+</li>
+</ul>
+<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><p>当修改本地work/conf/nginx.conf文件后需要在容器执行如下命令，重新reload，才能生效<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ /usr/local/openresty/nginx/sbin/nginx -s reload</div></pre></td></tr></table></figure></p>
+<h2 id="lua代码"><a href="#lua代码" class="headerlink" title="lua代码"></a>lua代码</h2><p>为了便于维护，把nginx配置文件中的代码移到lua文件中，在work/conf目录下创建lua子目录用于存放lua源代码文件<br>work/conf/lua/test.lua<br><figure class="highlight lua"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ngx.say(<span class="string">"hello, openresty"</span>);</div></pre></td></tr></table></figure></p>
+<p>把nginx.conf改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">locaiton / &#123;</div><div class="line">    default_type text/html;</div><div class="line">    content_by_lua_file conf/lua/test.lua;</div><div class="line">&#125;</div><div class="line">...</div></pre></td></tr></table></figure></p>
+<p>其中，<code>conf/lua/test.lua</code>相对于nginx的安装目录，此处也可以使用绝对路径<code>/usr/local/openresty/nginx/conf/lua/test.lua</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run -d --name=&quot;openresty&quot; -p 8080:80 -v /Users/henery/openresty/work/conf/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf:ro -v /Users/henery/openresty/work/conf/lua:/usr/local/openresty/nginx/conf/lua -v /Users/henery/openresty/work/logs:/usr/local/openresty/nginx/logs openresty/openresty</div></pre></td></tr></table></figure>
+<p>增加一个映射将本地存放lua代码的目录映射到容器中</p>
+<h2 id="lua-code-cache"><a href="#lua-code-cache" class="headerlink" title="lua_code_cache"></a>lua_code_cache</h2><p>上面提到了修改了nginx.conf或者lua源文件，只有reload nginx才生效，比较麻烦。<br><code>lua_code_cache</code>默认是开启状态，可以在开发阶段通过关闭lua代码缓存的方式<code>lua_code_cache off;</code>，这样每次修改完lua代码，都可以立即看到结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">location / &#123;</div><div class="line">    default_type text/html;</div><div class="line">    lua_code_cache off;</div><div class="line">    content_by_lua_file conf/lua/test.lua;</div><div class="line">&#125;</div><div class="line">...</div></pre></td></tr></table></figure></p>
+<p><strong>注意</strong>，在正式环境下一定要开启缓存<br>nginx运行时，会提示如下警告信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nginx: [alert] lua_code_cache is off; this will hurt performance in /usr/local/openresty/nginx/conf/nginx.conf:11</div></pre></td></tr></table></figure></p>
+<h2 id="优化工作目录"><a href="#优化工作目录" class="headerlink" title="优化工作目录"></a>优化工作目录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">work</div><div class="line">|____conf</div><div class="line">| |____nginx.conf   --- 公用nginx配置文件</div><div class="line">|____logs           --- 日志目录</div><div class="line">|____test           --- 项目目录</div><div class="line">| |____lua          --- lua源代码目录</div><div class="line">| | |____*.lua      --- lua源码</div><div class="line">| |____lualib       --- lua依赖库/第三方依赖库</div><div class="line">| | |____*.lua      --- lua模块</div><div class="line">| | |____*.so       --- c模块</div><div class="line">| |____test.conf    --- 项目自己的nginx配置文件</div></pre></td></tr></table></figure>
+<h3 id="修改公共nginx-conf文件"><a href="#修改公共nginx-conf文件" class="headerlink" title="修改公共nginx.conf文件"></a>修改公共nginx.conf文件</h3><p>work/conf/nginx.conf<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">http &#123;</div><div class="line">    ...</div><div class="line">    # lua模块路径，多个之间”;”分隔，其中”;;”表示默认搜索路径，默认到/usr/local/openresty/nginx下找</div><div class="line">    lua_package_path &quot;/usr/local/openresty/lualib/?.lua;;&quot;;</div><div class="line">    lua_package_cpath &quot;/usr/local/openresty/lualib/?.so;;&quot;;</div><div class="line"></div><div class="line">    # 包含项目test的test.conf</div><div class="line">    include test/test.conf;</div><div class="line">    ...</div><div class="line">&#125;</div><div class="line">...</div></pre></td></tr></table></figure></p>
+<h1 id="json"><a href="#json" class="headerlink" title="json"></a>json</h1><p>cjson</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run -d --name=&quot;openresty&quot; -p 8080:80 -v /Users/henery/openresty/work/cjson/cjson.conf:/usr/local/openresty/nginx/conf/nginx.conf:ro -v /Users/henery/openresty/work/cjson/lua:/usr/local/openresty/nginx/conf/lua -v /Users/henery/openresty/work/logs:/usr/local/openresty/nginx/logs openresty/openresty</div></pre></td></tr></table></figure>
+<h1 id="访问mysql"><a href="#访问mysql" class="headerlink" title="访问mysql"></a>访问mysql</h1><h1 id="访问redis"><a href="#访问redis" class="headerlink" title="访问redis"></a>访问redis</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li><a href="https://openresty.org/en/" target="_blank" rel="external">OpenResty® - Official Site</a></li>
+<li><a href="https://openresty.org/cn/" target="_blank" rel="external">OpenResty中文官方网站</a></li>
+<li><a href="https://segmentfault.com/a/1190000004113020" target="_blank" rel="external">OpenResty的现状、趋势、使用及学习方法</a></li>
+<li><a href="https://moonbingbing.gitbooks.io/openresty-best-practices/" target="_blank" rel="external">OpenResty 最佳实践</a></li>
+<li><a href="http://chenxiaoyu.org/2011/10/30/nginx-modules.html" target="_blank" rel="external">Nginx 第三方模块试用记</a></li>
+<li><a href="http://wendal.net/338.html" target="_blank" rel="external">推荐OpenResty – Nginx全能插件版</a></li>
+<li><a href="https://wdicc.com/intro-openresty/" target="_blank" rel="external">介绍下 openresty</a></li>
+<li><a href="http://www.cnblogs.com/leoo2sk/archive/2011/10/02/nginx-memc-and-srcache.html" target="_blank" rel="external">使用memc-nginx和srcache-nginx模块构建高效透明的缓存机制</a></li>
+<li><a href="http://jinnianshilongnian.iteye.com/blog/2190344" target="_blank" rel="external">跟我学OpenResty(Nginx+Lua)开发目录贴</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/wechatpay.jpeg" alt="老杨 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/alipay.jpeg" alt="老杨 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/docker/" rel="tag"># docker</a>
+          
+            <a href="/tags/nginx/" rel="tag"># nginx</a>
+          
+            <a href="/tags/lua/" rel="tag"># lua</a>
+          
+            <a href="/tags/openresty/" rel="tag"># openresty</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/19/css-animate/" rel="next" title="CSS动画初探">
+                <i class="fa fa-chevron-left"></i> CSS动画初探
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/24/docker-centos-php-nginx/" rel="prev" title="CentOS下用docker生产环境">
+                CentOS下用docker生产环境 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="老杨" />
+          <p class="site-author-name" itemprop="name">老杨</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="uploads/wechat.jpeg" target="_blank" title="微信">
+                  
+                    <i class="fa fa-fw fa-wechat"></i>
+                  
+                  微信
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:heneryyang@gmail.com" target="_blank" title="邮箱">
+                  
+                    <i class="fa fa-fw fa-google"></i>
+                  
+                  邮箱
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="tencent://message/?uin=24992316&Site=&Menu=yes" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                  QQ
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/heneryyang" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#关于OpenResty"><span class="nav-number">1.</span> <span class="nav-text">关于OpenResty</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装OpenResty开发环境"><span class="nav-number">2.</span> <span class="nav-text">安装OpenResty开发环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#docker安装方式"><span class="nav-number">2.1.</span> <span class="nav-text">docker安装方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#获取openresty镜像"><span class="nav-number">2.1.1.</span> <span class="nav-text">获取openresty镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行docker容器"><span class="nav-number">2.1.2.</span> <span class="nav-text">运行docker容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#停止容器"><span class="nav-number">2.1.3.</span> <span class="nav-text">停止容器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一个应用-hello-openresty"><span class="nav-number">2.2.</span> <span class="nav-text">第一个应用 - hello openresty</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#启动docker容器"><span class="nav-number">2.2.1.</span> <span class="nav-text">启动docker容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看结果"><span class="nav-number">2.2.2.</span> <span class="nav-text">查看结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新"><span class="nav-number">2.2.3.</span> <span class="nav-text">更新</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lua代码"><span class="nav-number">2.3.</span> <span class="nav-text">lua代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lua-code-cache"><span class="nav-number">2.4.</span> <span class="nav-text">lua_code_cache</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优化工作目录"><span class="nav-number">2.5.</span> <span class="nav-text">优化工作目录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改公共nginx-conf文件"><span class="nav-number">2.5.1.</span> <span class="nav-text">修改公共nginx.conf文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#json"><span class="nav-number">3.</span> <span class="nav-text">json</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#访问mysql"><span class="nav-number">4.</span> <span class="nav-text">访问mysql</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#访问redis"><span class="nav-number">5.</span> <span class="nav-text">访问redis</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">老杨</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
