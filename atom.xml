@@ -57,21 +57,21 @@
       <category term="环境搭建" scheme="http://heneryyang.github.io/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     
     
-      <category term="docker" scheme="http://heneryyang.github.io/tags/docker/"/>
-    
       <category term="centos" scheme="http://heneryyang.github.io/tags/centos/"/>
     
-      <category term="nginx" scheme="http://heneryyang.github.io/tags/nginx/"/>
-    
-      <category term="redis" scheme="http://heneryyang.github.io/tags/redis/"/>
-    
-      <category term="thrift" scheme="http://heneryyang.github.io/tags/thrift/"/>
+      <category term="docker" scheme="http://heneryyang.github.io/tags/docker/"/>
     
       <category term="php" scheme="http://heneryyang.github.io/tags/php/"/>
+    
+      <category term="nginx" scheme="http://heneryyang.github.io/tags/nginx/"/>
     
       <category term="docker-compose" scheme="http://heneryyang.github.io/tags/docker-compose/"/>
     
       <category term="docker-regist" scheme="http://heneryyang.github.io/tags/docker-regist/"/>
+    
+      <category term="redis" scheme="http://heneryyang.github.io/tags/redis/"/>
+    
+      <category term="thrift" scheme="http://heneryyang.github.io/tags/thrift/"/>
     
   </entry>
   
@@ -165,7 +165,7 @@
     <link href="http://heneryyang.github.io/2017/04/01/book-list-2017/"/>
     <id>http://heneryyang.github.io/2017/04/01/book-list-2017/</id>
     <published>2017-04-01T03:33:15.000Z</published>
-    <updated>2017-04-21T05:08:03.600Z</updated>
+    <updated>2017-07-14T07:14:05.980Z</updated>
     
     <summary type="html">
     
