@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://heneryyang.github.io/2017/05/24/docker-centos-php-nginx/</loc>
+    
+    <lastmod>2017-09-26T02:22:24.480Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://heneryyang.github.io/2017/04/01/book-list-2017/</loc>
     
     <lastmod>2017-09-26T02:07:31.150Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://heneryyang.github.io/2017/07/05/docker-jenkins-ci/</loc>
     
     <lastmod>2017-08-24T06:21:23.180Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://heneryyang.github.io/2017/05/24/docker-centos-php-nginx/</loc>
-    
-    <lastmod>2017-06-28T02:52:28.000Z</lastmod>
     
   </url>
   
