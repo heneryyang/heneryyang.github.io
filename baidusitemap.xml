@@ -56,21 +56,21 @@
         <title>CentOS下用docker生产环境</title>
         <pubTime>2017-05-24T03:34:36.000Z</pubTime>
         
-        <tag>centos</tag>
-         
         <tag>docker</tag>
          
-        <tag>php</tag>
+        <tag>centos</tag>
          
         <tag>nginx</tag>
-         
-        <tag>docker-compose</tag>
-         
-        <tag>docker-regist</tag>
          
         <tag>redis</tag>
          
         <tag>thrift</tag>
+         
+        <tag>php</tag>
+         
+        <tag>docker-compose</tag>
+         
+        <tag>docker-regist</tag>
          
          
            

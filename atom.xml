@@ -57,21 +57,21 @@
       <category term="环境搭建" scheme="http://heneryyang.github.io/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     
     
-      <category term="centos" scheme="http://heneryyang.github.io/tags/centos/"/>
-    
       <category term="docker" scheme="http://heneryyang.github.io/tags/docker/"/>
     
-      <category term="php" scheme="http://heneryyang.github.io/tags/php/"/>
+      <category term="centos" scheme="http://heneryyang.github.io/tags/centos/"/>
     
       <category term="nginx" scheme="http://heneryyang.github.io/tags/nginx/"/>
-    
-      <category term="docker-compose" scheme="http://heneryyang.github.io/tags/docker-compose/"/>
-    
-      <category term="docker-regist" scheme="http://heneryyang.github.io/tags/docker-regist/"/>
     
       <category term="redis" scheme="http://heneryyang.github.io/tags/redis/"/>
     
       <category term="thrift" scheme="http://heneryyang.github.io/tags/thrift/"/>
+    
+      <category term="php" scheme="http://heneryyang.github.io/tags/php/"/>
+    
+      <category term="docker-compose" scheme="http://heneryyang.github.io/tags/docker-compose/"/>
+    
+      <category term="docker-regist" scheme="http://heneryyang.github.io/tags/docker-regist/"/>
     
   </entry>
   
