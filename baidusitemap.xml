@@ -4,42 +4,8 @@
 
     
   <url>
-    <loc>http://heneryyang.github.io/2017/05/24/docker-centos-php-nginx/</loc>
-    <lastmod>2017-09-26T02:22:24.480Z</lastmod>
-    <data>
-        <display>
-        <title>CentOS下用docker生产环境</title>
-        <pubTime>2017-05-24T03:34:36.000Z</pubTime>
-        
-        <tag>docker</tag>
-         
-        <tag>centos</tag>
-         
-        <tag>nginx</tag>
-         
-        <tag>redis</tag>
-         
-        <tag>thrift</tag>
-         
-        <tag>php</tag>
-         
-        <tag>docker-compose</tag>
-         
-        <tag>docker-regist</tag>
-         
-         
-           
-             
-              <breadCrumb title="环境搭建" url="http://heneryyang.github.io/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://heneryyang.github.io/2017/04/01/book-list-2017/</loc>
-    <lastmod>2017-09-26T02:07:31.150Z</lastmod>
+    <lastmod>2017-11-02T02:12:26.180Z</lastmod>
     <data>
         <display>
         <title>2017年书单</title>
@@ -49,6 +15,40 @@
            
              
               <breadCrumb title="书单" url="http://heneryyang.github.io/categories/%E4%B9%A6%E5%8D%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://heneryyang.github.io/2017/05/24/docker-centos-php-nginx/</loc>
+    <lastmod>2017-09-26T02:22:24.480Z</lastmod>
+    <data>
+        <display>
+        <title>CentOS下用docker生产环境</title>
+        <pubTime>2017-05-24T03:34:36.000Z</pubTime>
+        
+        <tag>centos</tag>
+         
+        <tag>docker</tag>
+         
+        <tag>php</tag>
+         
+        <tag>nginx</tag>
+         
+        <tag>docker-compose</tag>
+         
+        <tag>docker-regist</tag>
+         
+        <tag>redis</tag>
+         
+        <tag>thrift</tag>
+         
+         
+           
+             
+              <breadCrumb title="环境搭建" url="http://heneryyang.github.io/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
           
         </display>
     </data>
