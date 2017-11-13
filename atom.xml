@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://heneryyang.github.io/"/>
-  <updated>2017-11-06T07:48:03.680Z</updated>
+  <updated>2017-08-24T06:21:23.180Z</updated>
   <id>http://heneryyang.github.io/</id>
   
   <author>
@@ -14,22 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="http://heneryyang.github.io/2017/11/06/book-list-2017/echarts.min/"/>
-    <id>http://heneryyang.github.io/2017/11/06/book-list-2017/echarts.min/</id>
-    <published>2017-11-06T07:47:54.000Z</published>
-    <updated>2017-11-06T07:48:03.680Z</updated>
-    
-    <summary type="html">
-    
-      !function(t,e){&quot;object&quot;==typeof exports&amp;&amp;&quot;object&quot;==typeof module?module.exports=e():&quot;function&quot;==typeof define&amp;&amp;define.amd?define([],e):&quot;obje
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>通过jenkins部署环境</title>
@@ -135,11 +119,11 @@
       <category term="前端 - css" scheme="http://heneryyang.github.io/categories/%E5%89%8D%E7%AB%AF-css/"/>
     
     
+      <category term="动画" scheme="http://heneryyang.github.io/tags/%E5%8A%A8%E7%94%BB/"/>
+    
       <category term="css" scheme="http://heneryyang.github.io/tags/css/"/>
     
       <category term="css3" scheme="http://heneryyang.github.io/tags/css3/"/>
-    
-      <category term="动画" scheme="http://heneryyang.github.io/tags/%E5%8A%A8%E7%94%BB/"/>
     
       <category term="animate" scheme="http://heneryyang.github.io/tags/animate/"/>
     
