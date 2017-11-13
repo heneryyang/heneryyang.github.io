@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://heneryyang.github.io/"/>
-  <updated>2017-08-24T06:21:23.180Z</updated>
+  <updated>2017-11-06T07:48:03.680Z</updated>
   <id>http://heneryyang.github.io/</id>
   
   <author>
@@ -14,6 +14,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://heneryyang.github.io/2017/11/06/book-list-2017/echarts.min/"/>
+    <id>http://heneryyang.github.io/2017/11/06/book-list-2017/echarts.min/</id>
+    <published>2017-11-06T07:47:54.000Z</published>
+    <updated>2017-11-06T07:48:03.680Z</updated>
+    
+    <summary type="html">
+    
+      !function(t,e){&quot;object&quot;==typeof exports&amp;&amp;&quot;object&quot;==typeof module?module.exports=e():&quot;function&quot;==typeof define&amp;&amp;define.amd?define([],e):&quot;obje
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>通过jenkins部署环境</title>
@@ -166,11 +182,11 @@
     <link href="http://heneryyang.github.io/2017/04/01/book-list-2017/"/>
     <id>http://heneryyang.github.io/2017/04/01/book-list-2017/</id>
     <published>2017-04-01T03:33:15.000Z</published>
-    <updated>2017-11-02T02:12:26.180Z</updated>
+    <updated>2017-11-13T09:36:07.100Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;/2017/04/01/book-list-2017/banner.jpg&quot; alt=&quot;2017年书单&quot;&gt;&lt;br&gt;列个书单，梳理一下2017年已经在读的书和打算读的书，等年底看看效果，也是对自己的一个督促。书单会不定期更新状态和进行补充完善。&lt;br&gt;持续更新中……&lt;br&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;/2017/04/01/book-list-2017/banner.jpg&quot; alt=&quot;2017年书单&quot;&gt;&lt;br&gt;列个书单，梳理一下2017年已经在读的书和打算读的书，等年底看看效果，也是对自己的一个督促。书单会不定期更新状态和进行补充完善。&lt;br&gt;持续更新中……&lt;br&gt;2017-11-13 更新&lt;br&gt;&lt;/p&gt;
     
     </summary>
     
